@@ -2,3 +2,27 @@
     padding: 0;
     margin: 0;
 }
+
+/* Footer style */
+footer {
+    text-align: justify;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0;
+  }
+  
+  footer i {
+    font-size: 200%;
+    padding: 0 25px;
+    color: rgb(0, 0, 0);
+  }
+  
+  footer li {
+    display: inline;
+  }
+  
+  footer li:hover {
+    font-size: 150%;
+  }
