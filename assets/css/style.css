@@ -40,6 +40,13 @@ nav a {
     border: 1px solid black;
 }
 
+.slides {
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+}
+
+
 /* Game */
 #game{
     width: 500px;
@@ -75,6 +82,17 @@ nav a {
     position:relative;
     top: 130px;
     left: 480px;
+}
+
+#home-section {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+#play {
+    width: fit-content;
+    margin: 10px auto;
 }
 
 /* Footer style */
