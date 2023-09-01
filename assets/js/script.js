@@ -30,7 +30,6 @@ function jump() {
     }, 250);
 }
 
-
 /** Starts game */
 function start() {  
     barrelHit = false;
@@ -59,7 +58,9 @@ function game() {
  */
 async function generateNewBarrel(newBarrel) {
     let barrel = document.createElement('div');
-    
+    // random number of pixels for movement
+    let barrelSpeed = Math.floor(Math.random()*3)+2;
+
     blocks.appendChild(barrel);
     barrel.setAttribute('class','barrel');
     barrel.style.top = (130)+'px';
@@ -69,7 +70,7 @@ async function generateNewBarrel(newBarrel) {
 
     while (barrelLeft > 0){
         await sleep(10);
-        barrelLeft--;
+        barrelLeft = barrelLeft - barrelSpeed;
         barrel.style.left = barrelLeft+'px';
     }
     barrel.remove();
