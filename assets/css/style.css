@@ -70,8 +70,8 @@ nav a {
 
 @keyframes jump {
     0%{top: 150px;}
-    30%{top: 100px;}
-    60%{top: 100px;}
+    20%{top: 100px;}
+    80%{top: 100px;}
     100%{top: 150px}
 }
 

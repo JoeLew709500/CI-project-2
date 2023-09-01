@@ -2,9 +2,12 @@ let character = document.getElementById('character');
 let blocks = document.getElementById('blocks');
 let barrelHit = true;
 let characterBackground = getComputedStyle(character).getPropertyValue('background');
+let currentScore = document.getElementById('current-score');
+let highScore = document.getElementById('high-score');
 
 let characterChange = 0;
 let score = 0;
+let topScore = 0;
 
 let counter = setInterval(game, 1);
 
@@ -56,6 +59,8 @@ function game() {
         characterMove();
         characterChange = 0;
     }
+
+    currentScore.innerHTML = `Score: ${score}`
 };
 
 /**
@@ -80,7 +85,12 @@ async function generateNewBarrel(newBarrel) {
         let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
         if ((barrelLeft < 30 && barrelLeft > 10 && characterTop >= 130)) {
             barrel.remove();
-            alert(`You lost :(`);
+            alert(`You lost :( ${score}`);
+            if (score > topScore) {
+                topScore = score;
+            }
+            highScore.innerHTML = `High Score: ${topScore}`;
+            score = 0;
             barrelHit = true;
             return;
         }
@@ -89,6 +99,9 @@ async function generateNewBarrel(newBarrel) {
     generateNewBarrel()
 }
 
+/**
+ * Changes character style as the game runs
+ */
 function characterMove() {
     if (characterBackground === 'red') {
         character.style.background = 'pink';
