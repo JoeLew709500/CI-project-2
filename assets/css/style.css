@@ -57,6 +57,10 @@ nav a {
     left: 20px;
 }
 
+.jump-character {
+    animation: jump 250ms;
+}
+
 @keyframes jump {
     0%{top: 150px;}
     30%{top: 100px;}
