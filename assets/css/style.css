@@ -58,7 +58,7 @@ nav a {
 }
 
 .jump-character {
-    animation: jump 250ms;
+    animation: jump 500ms;
 }
 
 @keyframes jump {
