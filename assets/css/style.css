@@ -95,6 +95,17 @@ nav a {
     margin: 10px auto;
 }
 
+#score-bar {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 50% 50%;
+}
+
+#score-bar p {
+    padding: 5px;
+    text-align: center;
+}
+
 /* Footer style */
 footer {
     text-align: justify;
