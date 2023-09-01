@@ -31,7 +31,10 @@ function jump() {
 }
 
 /** Starts game */
-function start() {  
+function start() { 
+    if (barrelHit === false) {
+        return;
+    }
     barrelHit = false;
     generateNewBarrel();
     return;
