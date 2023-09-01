@@ -49,14 +49,7 @@ function game() {
     if (barrelHit) {
         return;
     }
-    checkHit++;
     score++;
-
-    // check if dead and move block every 5ms
-    if (checkHit === 5 ) {
-        //checkDead();
-        checkHit = 0;
-    }
 };
 
 /**
@@ -78,6 +71,13 @@ async function generateNewBarrel(newBarrel) {
         await sleep(10);
         barrelLeft = barrelLeft - barrelSpeed;
         barrel.style.left = barrelLeft+'px';
+        let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
+        if ((barrelLeft < 30 && barrelLeft > 10 && characterTop >= 130)) {
+            barrel.remove();
+            alert(`You lost :(`);
+            barrelHit = true;
+            return;
+        }
     }
     barrel.remove();
     generateNewBarrel()
