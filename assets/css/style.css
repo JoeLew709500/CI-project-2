@@ -1,6 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap');
+
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Rubik Iso', cursive;
+}
+
+header {
+    display: grid;
+    justify-content:center;
+    padding: 10px 0;
+}
+
+#logo {
+    text-align: center;
+}
+nav ul {
+    list-style-type: none;
+    display: grid;
+    grid-auto-flow: column;
+    text-align: center;
+}
+
+nav li {
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 5%;
+    margin: 2px;
+    font-weight: 600;
+}
+nav a {
+    text-decoration: none;
+}
+
+.slides-container {
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    border: 1px solid black;
 }
 
 /* Footer style */
