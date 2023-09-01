@@ -3,7 +3,7 @@ let blocks = document.getElementById('blocks');
 let barrelHit = true;
 let characterBackground = getComputedStyle(character).getPropertyValue('background');
 
-let checkHit = 0;
+let characterChange = 0;
 let score = 0;
 
 let counter = setInterval(game, 1);
@@ -49,7 +49,13 @@ function game() {
     if (barrelHit) {
         return;
     }
+    characterChange++;
     score++;
+
+    if (characterChange === 50) {
+        characterMove();
+        characterChange = 0;
+    }
 };
 
 /**
@@ -81,4 +87,14 @@ async function generateNewBarrel(newBarrel) {
     }
     barrel.remove();
     generateNewBarrel()
+}
+
+function characterMove() {
+    if (characterBackground === 'red') {
+        character.style.background = 'pink';
+        characterBackground = 'pink';
+    } else {
+        character.style.background = 'red';
+        characterBackground = 'red';
+    }
 }
