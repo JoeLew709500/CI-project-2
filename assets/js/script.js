@@ -23,6 +23,9 @@ document.getElementById('play').addEventListener('click', start);
 /**
  * Causes the character to jump */
 function jump() {
+    if (barrelHit) {
+        return;
+    }
     if (character.classList != 'jump-character')
         character.classList.add('jump-character');
     setTimeout(function () {
