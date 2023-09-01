@@ -40,6 +40,39 @@ nav a {
     border: 1px solid black;
 }
 
+/* Game */
+#game{
+    width: 500px;
+    height:200px;
+    border: 1px solid black;
+    margin: auto;
+}
+
+#character {
+    width: 20px;
+    height: 50px;
+    background-color: red;
+    position: relative;
+    top:150px;
+    left: 20px;
+}
+
+@keyframes jump {
+    0%{top: 150px;}
+    30%{top: 100px;}
+    60%{top: 100px;}
+    100%{top: 150px}
+}
+
+.barrel {        
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    position:relative;
+    top: 130px;
+    left: 480px;
+}
+
 /* Footer style */
 footer {
     text-align: justify;
