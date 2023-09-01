@@ -106,6 +106,16 @@ nav a {
     text-align: center;
 }
 
+/* feedback */
+.form-container {
+    display: grid;
+    justify-content: center;
+}
+
+.button {
+    margin: 10px 0;
+}
+
 /* Footer style */
 footer {
     text-align: justify;
