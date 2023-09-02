@@ -5,6 +5,11 @@ let characterBackground = getComputedStyle(character).getPropertyValue('backgrou
 let currentScore = document.getElementById('current-score');
 let highScore = document.getElementById('high-score');
 
+// define slide sections
+let home = document.getElementById('home-section');
+let instructions = document.getElementById('instructions-section');
+let review = document.getElementById('review-section');
+
 let characterChange = 0;
 let score = 0;
 let topScore = 0;
@@ -111,3 +116,30 @@ function characterMove() {
         characterBackground = 'red';
     }
 }
+
+//slideshow
+document.addEventListener("DOMContentLoaded", function() {
+    let navLinks = document.getElementsByTagName('a');
+
+    for (let link of navLinks) {
+        link.addEventListener('click',function() {
+            let selectedLink = this.id;
+            if (selectedLink === 'home') {                    home.classList.remove('slide-animation');
+                home.style.display = 'grid';
+                home.classList.add('slide-animation');
+                instructions.style.display = 'none';
+                review.style.display = 'none';
+            } else if (selectedLink === 'instructions') {
+                home.style.display = 'none';
+                instructions.style.display = 'block';
+                instructions.classList.add('slide-animation');
+                review.style.display = 'none';
+            } else if (selectedLink === 'review') {
+                home.style.display = 'none';
+                instructions.style.display = 'none';
+                review.style.display = 'block';
+                review.classList.add('slide-animation');
+            }
+        })
+    }
+})
