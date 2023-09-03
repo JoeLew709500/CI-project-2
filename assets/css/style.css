@@ -3,17 +3,33 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Rubik Iso', cursive;
+    font-family: cursive;
     }
+
+body{
+    background-color: #CCF381;
+}
+
+h2 {
+    font-family: 'Rubik Iso',cursive;
+}
 
 header {
     display: grid;
     justify-content:center;
     padding: 10px 0;
+    background-color: #4831D4;
+    color: #CCF381;
+    margin: auto;
+}
+
+button {
+    font-family: 'Rubik Iso',cursive;
 }
 
 #logo {
     text-align: center;
+    font-family: 'Rubik Iso',cursive;
 }
 nav ul {
     list-style-type: none;
@@ -28,12 +44,34 @@ nav li {
     border-radius: 5%;
     margin: 2px;
     font-weight: 600;
+    background-color: #CCF381;
 }
 nav a {
     text-decoration: none;
+    color: #4831D4;
+}
+
+p {
+    font-weight: 600;
 }
 
 /* slides */
+
+#instructions-section {
+    width: fit-content;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: auto;
+}
+
+#review-section {
+    width: fit-content;
+    background-color: #4831D4;
+    color: #CCF381;
+    border-radius: 5px;
+    padding: 10%;
+}
 
 .not-home {
     display: none;
@@ -42,7 +80,6 @@ nav a {
 .slides-container {
     width: 90%;
     max-width: 500px;
-    margin: auto;
 }
 
 .slides {
@@ -50,6 +87,9 @@ nav a {
     max-width: 500px;
     margin: auto;
     position: relative;
+    padding-top: 10px;
+    display: grid;
+    justify-content: center;
 }
 
 .slide-animation {
@@ -76,21 +116,24 @@ nav a {
 #game-barrel-jump {
     display:grid;
     margin-top: 20px;
+    border-radius: 5px;
+    background-color: white;
 }
 
 #game{
     width: 500px;
-    height:200px;
-    border: 1px solid black;
+    height:100px;
     border-bottom: 5px solid green;
     margin: auto;
+    background-color: rgb(181, 234, 250);
+    border-radius: 5px;
 }
 
 #character {
     width: 20px;
     height: 50px;
     position: relative;
-    top:150px;
+    top:50px;
     left: 20px;
     background-image: url('../images/character-1.png');
     background-size:contain;
@@ -120,6 +163,11 @@ nav a {
 #play {
     width: fit-content;
     margin: 10px auto;
+    font-weight: 600;
+    color: #4831D4;
+    background-color: #CCF381;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 #score-bar {
@@ -136,21 +184,36 @@ nav a {
 /* rock paper scissors lizard spook game */
 
 #game-rpsls{
-    width: 500px;
-    height:200px;
-    border: 1px solid black;
+    width: 300px;
+    height:350px;
+    border-radius: 5px;
     margin: auto;
     display: grid;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    gap: 20px;
 }
 
 #rpsls-selection {
     display: grid;
     grid-auto-flow: column;
+    width: 300px;
+    justify-content: center;
 }
 
 #rpsls-selected {
+    display: grid;
+    gap: 10px;
+}
+
+.game-button {
+    font-size: 20px;
+    margin: 0 5px;
+    width: 40px;
+}
+
+#rpsls-scores {
     display: grid;
     gap: 10px;
 }
@@ -178,7 +241,7 @@ footer {
   footer i {
     font-size: 200%;
     padding: 0 25px;
-    color: rgb(0, 0, 0);
+    color: #4831D4;
   }
   
   footer li {
@@ -187,4 +250,20 @@ footer {
   
   footer li:hover {
     font-size: 150%;
+  }
+
+  /* media queries */
+
+  @media screen and (max-width: 510px) {
+    #game {
+        width: 310px;
+    }
+
+    footer {
+        padding: 10px 0;
+    }
+
+    footer i {
+        padding: 0 15px;
+    }
   }
