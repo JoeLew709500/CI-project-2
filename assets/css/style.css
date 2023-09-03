@@ -131,12 +131,13 @@ p {
 
 #character {
     width: 20px;
-    height: 50px;
+    height: 45px;
     position: relative;
-    top:50px;
+    top:55px;
     left: 20px;
     background-image: url('../images/character-1.png');
     background-size:contain;
+    background-repeat: no-repeat;
 }
 
 .jump-character {
@@ -144,10 +145,10 @@ p {
 }
 
 @keyframes jump {
-    0%{top: 150px;}
-    20%{top: 100px;}
-    80%{top: 100px;}
-    100%{top: 150px}
+    0%{top: 55px;}
+    10%{top: 10px;}
+    90%{top: 10px;}
+    100%{top: 55px}
 }
 
 .barrel {        

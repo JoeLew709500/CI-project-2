@@ -76,11 +76,14 @@ async function generateNewBarrel(newBarrel) {
     let barrel = document.createElement('div');
     // random number of pixels for movement
     let barrelSpeed = Math.floor(Math.random() * 3) + 2;
+    // gets screen game size for where barrel starts
+    let gameWidth = parseInt(window.getComputedStyle(document.getElementById('game')).getPropertyValue('width'));
 
     blocks.appendChild(barrel);
     barrel.setAttribute('class', 'barrel');
-    barrel.style.top = (130) + 'px';
-    barrel.style.left = (480) + 'px';
+    barrel.style.top = (35) + 'px';
+    //takes off 20 for the width of the barrel
+    barrel.style.left = (gameWidth-20) + 'px';
 
     let barrelLeft = parseInt(window.getComputedStyle(barrel).getPropertyValue('left'));
 
@@ -89,7 +92,7 @@ async function generateNewBarrel(newBarrel) {
         barrelLeft = barrelLeft - barrelSpeed;
         barrel.style.left = barrelLeft + 'px';
         let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
-        if ((barrelLeft < 30 && barrelLeft > 10 && characterTop >= 130)) {
+        if ((barrelLeft < 30 && barrelLeft > 10 && characterTop > 20)) {
             barrel.remove();
             alert(`You lost :( ${score}`);
             if (score > topScore) {
@@ -112,11 +115,9 @@ function characterMove() {
     if (characterBackground === 'rightArmForward') {
         character.style.backgroundImage = 'url("/assets/images/character-2.png")';
         characterBackground = 'leftArmForward';
-        console.log('left');
     } else {
         character.style.backgroundImage = 'url("/assets/images/character-1.png")';
         characterBackground = 'rightArmForward';
-        console.log('right');
     }
 }
 
