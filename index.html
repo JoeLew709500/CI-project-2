@@ -16,7 +16,7 @@
         <nav>
             <ul>
                 <li>
-                    <a id="home" class="nav-button" href="#home-section">Home</a>
+                    <a id="home" class="nav-button" href="#home-section">Games</a>
                 </li>
                 <li>
                     <a id='instructions' class="nav-button" href="#instructions-section">Instructions</a>
@@ -31,6 +31,35 @@
     <div id="slides-container">
         <div class="slides">
             <div id="home-section">
+              <div id="game-rpsls">
+                <h2>Pick your hand</h2>
+                <div id="rpsls-selection">
+                  <button data-type="rock" id="rock-button" class="game-button" aria-label="Button to use rock.">
+                    <i class="fa-regular fa-hand-back-fist"></i>
+                </button>
+                <button data-type="paper" id="paper-button" class="game-button" aria-label="Button to use paper.">
+                    <i class="fa-regular fa-hand"></i>
+                </button>
+                <button data-type="scissors" id="scissors-button" class="game-button" aria-label="Button to use scissors.">
+                    <i class="fa-regular fa-hand-scissors"></i>
+                </button>
+                <button data-type="lizard" id="lizard-button" class="game-button" aria-label="Button to use lizard.">
+                    <i class="fa-regular fa-hand-lizard"></i>
+                </button>
+                <button data-type="spock" id="spock-button" class="game-button" aria-label="Button to use spock.">
+                    <i class="fa-regular fa-hand-spock"></i>
+                </button>
+                </div>
+                <div id="rpsls-selected">
+                  <p id="user-selected">You selected:</p>
+                  <p id="computer-selected">Computer selected:</p>
+                </div>             
+                <div id="rpsls-scores">
+                  <p id="result"></p>
+                  <p id="user-score">User score:</p>
+                  <p id="computer-score">Computer score:</p>
+                </div>
+              </div>
                 <div id="game">
                     <div id="character"></div>
                     <div id="blocks"></div>

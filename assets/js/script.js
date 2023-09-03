@@ -19,11 +19,12 @@ let counter = setInterval(game, 1);
 //make something wait x amount of milliseconds
 const sleep = async (ms) => {
     await new Promise(resolve => {
-        return setTimeout(resolve,ms)})
+        return setTimeout(resolve, ms)
+    })
 }
 
 document.getElementById('game').addEventListener('click', function (event) {
-        jump();
+    jump();
 });
 
 document.getElementById('play').addEventListener('click', start);
@@ -42,7 +43,7 @@ function jump() {
 }
 
 /** Starts game */
-function start() { 
+function start() {
     if (barrelHit === false) {
         return;
     }
@@ -74,19 +75,19 @@ function game() {
 async function generateNewBarrel(newBarrel) {
     let barrel = document.createElement('div');
     // random number of pixels for movement
-    let barrelSpeed = Math.floor(Math.random()*3)+2;
+    let barrelSpeed = Math.floor(Math.random() * 3) + 2;
 
     blocks.appendChild(barrel);
-    barrel.setAttribute('class','barrel');
-    barrel.style.top = (130)+'px';
-    barrel.style.left = (480)+'px';
+    barrel.setAttribute('class', 'barrel');
+    barrel.style.top = (130) + 'px';
+    barrel.style.left = (480) + 'px';
 
     let barrelLeft = parseInt(window.getComputedStyle(barrel).getPropertyValue('left'));
 
-    while (barrelLeft > 0){
+    while (barrelLeft > 0) {
         await sleep(10);
         barrelLeft = barrelLeft - barrelSpeed;
-        barrel.style.left = barrelLeft+'px';
+        barrel.style.left = barrelLeft + 'px';
         let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
         if ((barrelLeft < 30 && barrelLeft > 10 && characterTop >= 130)) {
             barrel.remove();
@@ -119,14 +120,17 @@ function characterMove() {
     }
 }
 
-//slideshow
-document.addEventListener("DOMContentLoaded", function() {
+//DOM content event listener
+document.addEventListener("DOMContentLoaded", function () {
     let navLinks = document.getElementsByTagName('a');
 
+
+    //slides
     for (let link of navLinks) {
-        link.addEventListener('click',function() {
+        link.addEventListener('click', function () {
             let selectedLink = this.id;
-            if (selectedLink === 'home') {                    home.classList.remove('slide-animation');
+            if (selectedLink === 'home') {
+                home.classList.remove('slide-animation');
                 home.style.display = 'grid';
                 home.classList.add('slide-animation');
                 instructions.style.display = 'none';
@@ -144,4 +148,89 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         })
     }
+
+    //rpsls button listeners
+    let buttons = document.getElementsByClassName('game-button');
+
+    for (let button of buttons) {
+        button.addEventListener('click', function () {
+            let userSelected = this.getAttribute("data-type");
+
+            rpslsGame(userSelected);
+        })
+    }
 })
+
+// rpsls game
+
+let userScore = 0;
+let computerScore = 0;
+let checkResultsDic = [
+    //first word is user second is computer
+    {merged:'rockpaper',text: 'Paper covers rock you lose',winner:'comp'},
+    {merged:'rockscissors',text: 'Rock crushes scissors you win',winner:'user'},
+    {merged: 'rocklizard',text: 'Rock crushes lizard you win',winner:'user'},
+    {merged: 'rockspock',text: 'Spock vaporises rock you lose',winner:'comp'},
+    {merged:'paperrock',text: 'Paper covers rock you win',winner:'user'},
+    {merged:'paperscissors',text: 'Scissors cuts paper you lose',winner:'comp'},
+    {merged: 'paperlizard',text: 'Lizard eats paper you lose',winner:'comp'},
+    {merged:'paperspock',text: 'Paper disproves of Spock you win',winner:'user'},
+    {merged:'scissorsrock',text: 'Rock crushes scissors you lose',winner:'comp'},
+    {merged:'scissorspaper',text: 'Scissors cuts paper you win',winner:'user'},
+    {merged:'scissorslizard',text: 'Scissors decapitates lizard you win',winner:'user'},
+    {merged:'scissorsspock',text: 'Spock smashes scissors you lose',winner:'comp'},
+    {merged:'lizardrock',text: 'Rock crushes lizard you lose',winner:'comp'},
+    {merged:'lizardpaper',text: 'Lizard eats paper you win',winner:'user'},
+    {merged:'lizardscissors',text: 'Scissors decapitates lizard you lose',winner:'comp'},
+    {merged:'lizardspock',text: 'Lizard poisons Spock you win',winner:'user'},
+    {merged:'spockpaper',text:'Spock vaporizes rock you win',winner:'user'},
+    {merged:'spockrock',text:'Paper disproves Spock you lose',winner:'comp'},
+    {merged:'spockscissors',text:'Spock smashes scissor you win',winner:'user'},
+    {merged:'spocklizard',text:'Lizard poisons Spock you lose',winner:'comp'},
+];
+
+function rpslsGame(userSelected) {
+    let computerSelected = null;
+    //show user what they selected
+    document.getElementById('user-selected').innerHTML = `You selected: ${userSelected}`;
+
+    //computer to select its hand
+    if (Math.random() < 0.2) {
+        computerSelected = 'rock';
+    } else if (Math.random() < 0.4) {
+        computerSelected = 'paper';
+    } else if (Math.random() < 0.6) {
+        computerSelected = 'scissors';
+    }
+    else if (Math.random() < 0.8) {
+        computerSelected = 'lizard';
+    }
+    else {
+        computerSelected = 'spock';
+    }
+    //shows user what computer selected
+    document.getElementById('computer-selected').innerHTML = `Computer selected: ${computerSelected}`;
+
+    rpslsCompareSelected(userSelected,computerSelected);
+}
+
+function rpslsCompareSelected(userSelected,computerSelected) {
+    let mergedSelected = userSelected+computerSelected;
+    let rpslsResult = document.getElementById('result');
+    if (userSelected === computerSelected) {
+        rpslsResult.innerHTML = `Draw you both selected ${computerSelected}`;
+    } else {
+        for (let i = 0;i<checkResultsDic.length;i++) {
+            if (checkResultsDic[i].merged === mergedSelected) {
+                rpslsResult.innerHTML = checkResultsDic[i].text;
+                if (checkResultsDic[i].winner==='user') {
+                    userScore++;
+                    document.getElementById('user-score').innerHTML = `User score: ${userScore}`;
+                } else {
+                    computerScore++;
+                    document.getElementById('computer-score').innerHTML = `Computer score: ${computerScore}`;
+                }
+            }
+        };
+    }
+}

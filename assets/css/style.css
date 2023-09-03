@@ -127,6 +127,30 @@ nav a {
     text-align: center;
 }
 
+/* rock paper scissors lizard spook game */
+
+#game-rpsls{
+    width: 500px;
+    height:200px;
+    border: 1px solid black;
+    margin: auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+#rpsls-selection {
+    display: grid;
+    grid-auto-flow: column;
+}
+
+#rpsls-selected {
+    display: grid;
+    gap: 10px;
+}
+
+
+
 /* feedback */
 .form-container {
     display: grid;
