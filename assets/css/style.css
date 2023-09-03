@@ -65,7 +65,19 @@ nav a {
     }
   }
 
-/* Game */
+#home-section {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Game barrel jump */
+#game-barrel-jump {
+    display:grid;
+    margin-top: 20px;
+}
+
 #game{
     width: 500px;
     height:200px;
@@ -105,12 +117,6 @@ nav a {
     left: 480px;
 }
 
-#home-section {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-}
-
 #play {
     width: fit-content;
     margin: 10px auto;
@@ -148,8 +154,6 @@ nav a {
     display: grid;
     gap: 10px;
 }
-
-
 
 /* feedback */
 .form-container {
