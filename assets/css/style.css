@@ -4,7 +4,7 @@
     padding: 0;
     margin: 0;
     font-family: 'Rubik Iso', cursive;
-}
+    }
 
 header {
     display: grid;
@@ -65,22 +65,23 @@ nav a {
     }
   }
 
-
 /* Game */
 #game{
     width: 500px;
     height:200px;
     border: 1px solid black;
+    border-bottom: 5px solid green;
     margin: auto;
 }
 
 #character {
     width: 20px;
     height: 50px;
-    background-color: red;
     position: relative;
     top:150px;
     left: 20px;
+    background-image: url('../images/character-1.png');
+    background-size:contain;
 }
 
 .jump-character {
@@ -97,7 +98,8 @@ nav a {
 .barrel {        
     width: 20px;
     height: 20px;
-    background-color: blue;
+    background-image: url('../images/barrel-1.png') ;
+    background-size:contain;
     position:relative;
     top: 130px;
     left: 480px;

@@ -1,7 +1,7 @@
 let character = document.getElementById('character');
 let blocks = document.getElementById('blocks');
 let barrelHit = true;
-let characterBackground = getComputedStyle(character).getPropertyValue('background');
+let characterBackground = 'rightArmForward'
 let currentScore = document.getElementById('current-score');
 let highScore = document.getElementById('high-score');
 
@@ -108,12 +108,14 @@ async function generateNewBarrel(newBarrel) {
  * Changes character style as the game runs
  */
 function characterMove() {
-    if (characterBackground === 'red') {
-        character.style.background = 'pink';
-        characterBackground = 'pink';
+    if (characterBackground === 'rightArmForward') {
+        character.style.backgroundImage = 'url("/assets/images/character-2.png")';
+        characterBackground = 'leftArmForward';
+        console.log('left');
     } else {
-        character.style.background = 'red';
-        characterBackground = 'red';
+        character.style.backgroundImage = 'url("/assets/images/character-1.png")';
+        characterBackground = 'rightArmForward';
+        console.log('right');
     }
 }
 
