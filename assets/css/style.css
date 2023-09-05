@@ -31,8 +31,12 @@ button {
     text-align: center;
     font-family: 'Rubik Iso',cursive;
 }
-nav ul {
+
+ul {
     list-style-type: none;
+}
+
+nav ul {
     display: grid;
     grid-auto-flow: column;
     text-align: center;

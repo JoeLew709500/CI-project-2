@@ -94,7 +94,7 @@ async function generateNewBarrel(newBarrel) {
         let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
         if ((barrelLeft < 30 && barrelLeft > 10 && characterTop > 20)) {
             barrel.remove();
-            alert(`You lost :( ${score}`);
+            alert(`You lost :(\nYour Score: ${score}`);
             if (score > topScore) {
                 topScore = score;
             }
