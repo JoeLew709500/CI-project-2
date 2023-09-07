@@ -272,3 +272,17 @@ footer {
         padding: 0 15px;
     }
   }
+
+  #game-modal {
+    margin: 20% auto; 
+    width: 300px;
+    text-align: center;
+    background-color: #4831D4;
+    border-radius: 5px;
+    padding: 10px 5px;
+    position: relative;
+  }
+
+  #game-modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }

@@ -14,7 +14,7 @@ let characterChange = 0;
 let score = 0;
 let topScore = 0;
 
-let counter = setInterval(game, 1);
+setInterval(game, 1);
 
 //make something wait x amount of milliseconds
 const sleep = async (ms) => {
@@ -94,7 +94,7 @@ async function generateNewBarrel(newBarrel) {
         let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
         if ((barrelLeft < 30 && barrelLeft > 10 && characterTop > 20)) {
             barrel.remove();
-            alert(`You lost :(\nYour Score: ${score}`);
+            displayModal(`You lost`,`High Score: ${topScore}`,`Your score: ${score}`);
             if (score > topScore) {
                 topScore = score;
             }
@@ -231,7 +231,37 @@ function rpslsCompareSelected(userSelected,computerSelected) {
                     computerScore++;
                     document.getElementById('computer-score').innerHTML = `Computer score: ${computerScore}`;
                 }
+                rpslsGameOver();
             }
         };
     }
+}
+/**
+ * Checks if rpsls is over (first to 5 wins)
+*/
+function rpslsGameOver() {
+    if (userScore===5) {
+        displayModal('You win',`Computers score: ${computerScore}`,`Your score: ${userScore}`);
+        userScore = 0;
+        computerScore = 0;
+    } else if (computerScore===5) {
+        displayModal('You lose',`Computers score: ${computerScore}`,`Your score: ${userScore}`);
+        userScore = 0;
+        computerScore = 0;
+    }
+}
+
+function displayModal(gameOverText,line2,line1) {
+    let modal = document.getElementById('game-modal')
+    let modalHeader = modal.children[0];
+    let modalPara = modal.children[1];
+    let modalButton = modal.children[2];
+
+    modalButton.addEventListener('click', function() {
+        modal.close();
+    })
+
+    modal.showModal();
+    modalHeader.innerHTML = gameOverText;
+    modalPara.innerHTML = `${line1} <br>${line2}`;
 }
