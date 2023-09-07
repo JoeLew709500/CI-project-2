@@ -34,6 +34,12 @@ button {
     margin: 5px;
 }
 
+button:hover, #play:hover {
+
+    background-color: #4831D4;
+    color: #CCF381;
+}
+
 #logo {
     text-align: center;
     font-family: 'Rubik Iso',cursive;
@@ -55,11 +61,15 @@ nav li {
     border-radius: 5%;
     margin: 2px;
     font-weight: 600;
-    background-color: #CCF381;
+    background-color: #CCF381; 
 }
 nav a {
     text-decoration: none;
     color: #4831D4;
+}
+
+nav li:hover {
+    font-size: 20px;
 }
 
 p {
