@@ -273,10 +273,14 @@ function rpslsGameOver() {
         displayModal('You win',`Computers score: ${computerScore}`,`Your score: ${userScore}`);
         userScore = 0;
         computerScore = 0;
+        document.getElementById('user-score').innerHTML = `User score: ${userScore}`;
+        document.getElementById('computer-score').innerHTML = `Computer score: ${computerScore}`;
     } else if (computerScore===5) {
         displayModal('You lose',`Computers score: ${computerScore}`,`Your score: ${userScore}`);
         userScore = 0;
         computerScore = 0;
+        document.getElementById('user-score').innerHTML = `User score: ${userScore}`;
+        document.getElementById('computer-score').innerHTML = `Computer score: ${computerScore}`;
     }
 }
 
