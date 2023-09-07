@@ -133,10 +133,10 @@ async function generateNewBarrel(newBarrel) {
  */
 function characterMove() {
     if (characterBackground === 'rightArmForward') {
-        character.style.backgroundImage = 'url("/assets/images/character-2.png")';
+        character.style.backgroundImage = 'url("./assets/images/character-2.png")';
         characterBackground = 'leftArmForward';
     } else {
-        character.style.backgroundImage = 'url("/assets/images/character-1.png")';
+        character.style.backgroundImage = 'url("./assets/images/character-1.png")';
         characterBackground = 'rightArmForward';
     }
 }
