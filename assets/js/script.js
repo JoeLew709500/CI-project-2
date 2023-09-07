@@ -9,6 +9,9 @@ let highScore = document.getElementById('high-score');
 let home = document.getElementById('home-section');
 let instructions = document.getElementById('instructions-section');
 let review = document.getElementById('review-section');
+let gameRPSLS = document.getElementById('game-rpsls')
+let gameBarrelJump = document.getElementById('game-barrel-jump');
+let gameBarrelJumpInstruct = document.getElementById('barrel-jump-instruct');
 
 let characterChange = 0;
 let score = 0;
@@ -28,6 +31,23 @@ document.getElementById('game').addEventListener('click', function (event) {
 });
 
 document.getElementById('play').addEventListener('click', start);
+
+// display Barrel Jump Instructions
+document.getElementById('barrel-jump-instruct').addEventListener('click', function() {
+    displayModal('Instructions','To play barrel jump you must jump over all of the barrels coming from the left of the screen. To jump you must click on the game screen.','How to play')
+});
+
+// display RPSLS Instructions
+document.getElementById('rpsls-instruct').addEventListener('click', function() {
+    displayModal('Instructions',`<p>To play Rock Paper Scissors Lizard Spock also known as RPSLS, you must select one of the hands below.</p>
+<ul>
+  <li><i class="fa-regular fa-hand-back-fist"></i> - Rock (Beats scissors and lizard)</li>
+  <li><i class="fa-regular fa-hand"></i> - Paper (Beats rock and Spock)</li>
+  <li><i class="fa-regular fa-hand-scissors"></i> - Scissors (Beats paper and lizard)</li>
+  <li><i class="fa-regular fa-hand-lizard"></i> - Lizard (Beats paper and Spock)</li>
+  <li><i class="fa-regular fa-hand-spock"></i> - Spock (Beats scissors and rock)</li>
+</ul>`,'How to play')
+});
 
 /**
  * Causes the character to jump */
@@ -134,18 +154,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 home.classList.remove('slide-animation');
                 home.style.display = 'grid';
                 home.classList.add('slide-animation');
-                instructions.style.display = 'none';
                 review.style.display = 'none';
-            } else if (selectedLink === 'instructions') {
+                gameRPSLS.style.display = 'none';
+                gameBarrelJump.style.display = 'none';
+            }  else if (selectedLink === 'review') {
                 home.style.display = 'none';
-                instructions.style.display = 'block';
-                instructions.classList.add('slide-animation');
-                review.style.display = 'none';
-            } else if (selectedLink === 'review') {
-                home.style.display = 'none';
-                instructions.style.display = 'none';
                 review.style.display = 'block';
                 review.classList.add('slide-animation');
+                gameRPSLS.style.display = 'none';
+                gameBarrelJump.style.display = 'none';
+            } else if (selectedLink === 'game-rpsls-nav') {
+                home.style.display = 'none';
+                review.style.display = 'none';
+                gameRPSLS.classList.add('slide-animation');
+                gameRPSLS.style.display = 'grid';
+                gameBarrelJump.style.display = 'none';
+            } else if (selectedLink === 'game-barrel-jump-nav') {
+                home.style.display = 'none';
+                review.style.display = 'none';
+                gameRPSLS.style.display = 'none';
+                gameBarrelJump.style.display = 'grid';
+                gameBarrelJump.classList.add('slide-animation');
             }
         })
     }
@@ -251,6 +280,8 @@ function rpslsGameOver() {
     }
 }
 
+/**
+ * displays modal*/
 function displayModal(gameOverText,line2,line1) {
     let modal = document.getElementById('game-modal')
     let modalHeader = modal.children[0];

@@ -18,13 +18,16 @@
         <nav>
             <ul>
                 <li>
-                    <a id="home" class="nav-button" href="#home-section">Games</a>
+                    <a id="home" class="nav-button" href="#home-section" aria-label="Visit the home section">Home</a>
                 </li>
                 <li>
-                    <a id='instructions' class="nav-button" href="#instructions-section">Instructions</a>
+                  <a class="nav-button" id="game-barrel-jump-nav" href="#game-barrel-jump" aria-label="Play the Barrel Jump">Barrel Jump</a>
                 </li>
                 <li>
-                    <a id="review" class="nav-button" href="#review-section">Feedback </a>
+                  <a href="#game-rpsls" id="game-rpsls-nav" class="nav-button" aria-label="Play Rock Paper Scissors Lizard Spock">RPSLS</a>
+                </li>
+                <li>
+                    <a id="review" class="nav-button" href="#review-section" aria-label="Visit the feedback section">Feedback</a>
                 </li>
             </ul>
         </nav>
@@ -39,7 +42,26 @@
     <div id="slides-container">
         <div class="slides">
             <div id="home-section">
-              <div id="game-rpsls">
+              <h2>Welcome to Games Site</h2>
+              <p>Games site is a website that lets up play retro styled mini games <br>Any suggestions of new retro mini games please provide feedback in the feedback section linked in the navigation bar.</p>
+            </div>
+            <div class="game-container">
+              <div style="display: none;" id="game-barrel-jump">
+                <h2>Barrel Jump</h2>
+                <div id="game">
+                    <div id="character"></div>
+                    <div id="blocks"></div>
+                </div>
+                <button id="play">Play</button>
+                <div id="score-bar">
+                  <p id="current-score">Score: </p>
+                  <p id="high-score">High Score: </p>
+                </div>
+                <button class='instruct-button' id="barrel-jump-instruct">Instructions</button>
+              </div>
+            </div>
+            <div class="game-container">
+              <div id="game-rpsls" style="display: none;">
                 <h2>RPSLS</h2>
                 <h3>Pick your hand</h3>
                 <div id="rpsls-selection">
@@ -67,39 +89,11 @@
                   <p id="result"></p>
                   <p id="user-score">User score: 0</p>
                   <p id="computer-score">Computer score: 0</p>
-                </div>
-              </div>
-              <div id="game-barrel-jump">
-                <h2>Barrel Jump</h2>
-                <div id="game">
-                    <div id="character"></div>
-                    <div id="blocks"></div>
-                </div>
-                <button id="play">Play</button>
-                <div id="score-bar">
-                  <p id="current-score">Score: </p>
-                  <p id="high-score">High Score: </p>
+                  <button class='instruct-button' id="rpsls-instruct">Instructions</button>
                 </div>
               </div>
             </div>
-            <div class='not-home' id="instructions-section">
-                <h2>Instructions</h2>
-                <h3>RPSLS</h3>
-                <h4>How to play</h3>
-                <p>To play Rock Paper Scissors Lizard Spock also known as RPSLS, you must select one of the hands below.</p>
-                <ul>
-                  <li><i class="fa-regular fa-hand-back-fist"></i> - Rock (Beats scissors and lizard)</li>
-                  <li><i class="fa-regular fa-hand"></i> - Paper (Beats rock and Spock)</li>
-                  <li><i class="fa-regular fa-hand-scissors"></i> - Scissors (Beats paper and lizard)</li>
-                  <li><i class="fa-regular fa-hand-lizard"></i> - Lizard (Beats paper and Spock)</li>
-                  <li><i class="fa-regular fa-hand-spock"></i> - Spock (Beats scissors and rock)</li>
-                </ul>
-                <br>
-                <h3>Barrel Jump</h3>
-                <h4>How to play</h3>
-                <p>To play barrel jump you must jump over all of the barrels coming from the left of the screen. To jump you can either press space bar or click on the game screen.</p>
-            </div>
-            <div class ='not-home' id="review-section">
+            <div style="display: none;" id="review-section">
                 <form class="form-container" action="https://formdump.codeinstitute.net" method="POST">
                     <h2>Leave your feedback!</h2>
 
