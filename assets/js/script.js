@@ -1,17 +1,17 @@
+/* jshint esversion: 8 */ 
+
 let character = document.getElementById('character');
 let blocks = document.getElementById('blocks');
 let barrelHit = true;
-let characterBackground = 'rightArmForward'
+let characterBackground = 'rightArmForward';
 let currentScore = document.getElementById('current-score');
 let highScore = document.getElementById('high-score');
 
 // define slide sections
 let home = document.getElementById('home-section');
-let instructions = document.getElementById('instructions-section');
 let review = document.getElementById('review-section');
-let gameRPSLS = document.getElementById('game-rpsls')
+let gameRPSLS = document.getElementById('game-rpsls');
 let gameBarrelJump = document.getElementById('game-barrel-jump');
-let gameBarrelJumpInstruct = document.getElementById('barrel-jump-instruct');
 
 let characterChange = 0;
 let score = 0;
@@ -22,9 +22,9 @@ setInterval(game, 1);
 //make something wait x amount of milliseconds
 const sleep = async (ms) => {
     await new Promise(resolve => {
-        return setTimeout(resolve, ms)
-    })
-}
+        return setTimeout(resolve, ms);
+    });
+};
 
 document.getElementById('game').addEventListener('click', function (event) {
     jump();
@@ -34,7 +34,7 @@ document.getElementById('play').addEventListener('click', start);
 
 // display Barrel Jump Instructions
 document.getElementById('barrel-jump-instruct').addEventListener('click', function() {
-    displayModal('Instructions','To play barrel jump you must jump over all of the barrels coming from the left of the screen. To jump you must click on the game screen.','How to play')
+    displayModal('Instructions','To play barrel jump you must jump over all of the barrels coming from the left of the screen. To jump you must click on the game screen.','How to play');
 });
 
 // display RPSLS Instructions
@@ -46,7 +46,7 @@ document.getElementById('rpsls-instruct').addEventListener('click', function() {
   <li><i class="fa-regular fa-hand-scissors"></i> - Scissors (Beats paper and lizard)</li>
   <li><i class="fa-regular fa-hand-lizard"></i> - Lizard (Beats paper and Spock)</li>
   <li><i class="fa-regular fa-hand-spock"></i> - Spock (Beats scissors and rock)</li>
-</ul>`,'How to play')
+</ul>`,'How to play');
 });
 
 /**
@@ -70,7 +70,7 @@ function start() {
     barrelHit = false;
     generateNewBarrel();
     return;
-};
+}
 
 
 /** runs the game timing for score and if barrel is hit */
@@ -86,8 +86,8 @@ function game() {
         characterChange = 0;
     }
 
-    currentScore.innerHTML = `Score: ${score}`
-};
+    currentScore.innerHTML = `Score: ${score}`;
+}
 
 /**
  * adds new barrel to game once the barrel has come off the screen
@@ -125,7 +125,7 @@ async function generateNewBarrel(newBarrel) {
         }
     }
     barrel.remove();
-    generateNewBarrel()
+    generateNewBarrel();
 }
 
 /**
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 gameBarrelJump.style.display = 'grid';
                 gameBarrelJump.classList.add('slide-animation');
             }
-        })
+        });
     }
 
     //rpsls button listeners
@@ -187,9 +187,9 @@ document.addEventListener("DOMContentLoaded", function () {
             let userSelected = this.getAttribute("data-type");
 
             rpslsGame(userSelected);
-        })
+        });
     }
-})
+});
 
 // rpsls game
 
@@ -262,7 +262,7 @@ function rpslsCompareSelected(userSelected,computerSelected) {
                 }
                 rpslsGameOver();
             }
-        };
+        }
     }
 }
 /**
@@ -287,14 +287,14 @@ function rpslsGameOver() {
 /**
  * displays modal*/
 function displayModal(gameOverText,line2,line1) {
-    let modal = document.getElementById('game-modal')
+    let modal = document.getElementById('game-modal');
     let modalHeader = modal.children[0];
     let modalPara = modal.children[1];
     let modalButton = modal.children[2];
 
     modalButton.addEventListener('click', function() {
         modal.close();
-    })
+    });
 
     modal.showModal();
     modalHeader.innerHTML = gameOverText;
