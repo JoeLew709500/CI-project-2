@@ -74,11 +74,6 @@ A live website can be found [here](https://joelew709500.github.io/CI-project-2/i
 
 ![footer image](assets/readme-files/footer.png)
 
-## Wire Frames
-[Back to table of content](#table-of-content)
-
-
-
 ## Testing
 [Back to table of content](#table-of-content)
 * I've tested the website on Edge, Chrome, Firefox
@@ -218,7 +213,7 @@ RPSLS
 ![Team](assets/readme-files/rpsls.png)
 
 Feedback
-![Sign-up](assets/readme-files/Feedback.png)
+![feedback](assets/readme-files/feedback.png)
 ## Credits
 [Back to table of content](#table-of-content)
 ### Content
