@@ -117,3 +117,108 @@ Home
 ### Manual Testing
 
 #### Screen size greater than 510    px
+
+#### Header
+
+Feature | Desired Outcome | Pass / Fail
+--- | --- | ---
+Website logo/title | Takes you to index.html | Pass
+Home button | Shows home section on hover enlarges | Pass
+Barrel Jump button | Shows barrel jump section on hover enlarges | Pass
+RPSLS button | Shows rpsls section on hover enlarges | Pass
+Feedback button | Shows feedback section on hover enlarges | Pass
+
+#### Home
+Feature | Desired Outcome | Pass / Fail
+--- | --- | ---
+Section | On load zooms in | Pass
+
+#### Barrel Jump
+Feature | Desired Outcome | Pass / Fail
+--- | --- | ---
+Section | On load zooms in | Pass
+Play Button | Starts game | Pass
+Game Barrels | Generate Barrels | Pass
+Character Jumps | Jumps when click on game window | Pass
+Character Runs | Character alternates between two images | Pass
+Scores | Show running scores and high score | Pass
+Game Over | Only activates on barrel hit character | Pass
+Game over results | Results show in modal | Pass
+Instructions | Shows Modal with instructions | Pass
+
+#### RPSLS
+Feature | Desired Outcome | Pass / Fail
+--- | --- | ---
+Section | On load zooms in | Pass
+Hand Selection | Each hand selects correctly | Pass
+Display selection | Display correct user and computer selection of hands | Pass
+Result | Show result of round | Pass
+Scores | Show scores of user and computer | Pass
+Game over results | Results show in modal after 5 wins by one party | Pass
+Instructions | Shows Modal with instructions | Pass
+
+
+#### Feedback page
+Feature | Desired Outcome | Pass / Fail
+--- | --- | ---
+First Name input | Mandatory | Pass
+Last Name input | Mandatory | Pass
+Comments| Mandatory| Pass
+Submit Feedback | Only submits when all fields are populated and takes to https://formdump.codeinstitute.net/ with Congratulations! message | Pass
+
+#### Footer
+Feature | Desired Outcome | Pass / Fail
+--- | --- | ---
+Social media icons | On hover increase in size | Pass
+
+### Screen size equal to or less than 510px
+#### Barrel Jump
+
+Feature | Desired Outcome | Pass / Fail
+--- | --- | ---
+Game width | on 510px screen width or smaller game adjusts | Pass
+Barrel Generation | Barrels generate at the edge of game | Pass
+
+
+## Deployment
+[Back to table of content](#table-of-content)
+
+I used GitHub pages to deploy my final project. To do this I had to:
+
+1. Create a repository on GitHub.
+2. Clone the repository on your chosen source code editor (VS code in my case) using the clone link.
+3. Add files to Git.
+4. Use git within VS code to push the code.
+5. Go to GitHub
+6. Select your repository.
+7. Select settings.
+8. Select pages on the left menu.
+9. Click on the main branch.
+10. This will generate a link with your website live.
+
+## Final product
+
+[Back to table of content](#table-of-content)
+
+Please see screenshots of each page below
+
+Home
+![Home](assets/readme-files/home.png)
+
+Barrel Jump
+![Six Nations](assets/readme-files/barrel-jump.png)
+
+RPSLS
+![Team](assets/readme-files/rpsls.png)
+
+Feedback
+![Sign-up](assets/readme-files/Feedback.png)
+## Credits
+[Back to table of content](#table-of-content)
+### Content
+* The instructions for RPSLS were taken from the Big Bang Theory
+* The code for the modal is a modified version of the mozilla.org code found [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)
+
+### Media
+* Favicon.cc was used to create the site favicon
+* GIMP 2.10 (gimp.org) was used to create the character and barrel images
