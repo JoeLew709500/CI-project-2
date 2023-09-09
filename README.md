@@ -100,7 +100,7 @@ A live website can be found [here](https://joelew709500.github.io/CI-project-2/i
         * There is also a warning for functions being called within loops on lines 151 and 186 however this is as intended
         
 
-![JShint](./assets/readme-files/jshint.png)
+![JShint](./assets/readme-files/JShint.png)
 
 * Accessibility
     * I can confirm that the colours and fonts used are accessible and appropriate by running lighthouse in dev tools
