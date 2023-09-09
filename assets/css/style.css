@@ -41,9 +41,14 @@ button:hover, #play:hover {
 }
 
 #logo {
-    text-align: center;
+    text-align: center;}
+
+#logo a {
     font-family: 'Rubik Iso',cursive;
+    color: #CCF381;
+    text-decoration: none;
 }
+
 
 ul {
     list-style-type: none;
