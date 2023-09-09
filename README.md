@@ -19,7 +19,6 @@ A live website can be found [here](https://joelew709500.github.io/CI-project-2/i
     * [Barrel Jump](#barrel-jump)
     * [RPSLS](#rpsls)
     * [Feedback](#feedback)
-* [Wire Frames](#wire-frames)
 * [Testing](#testing)
     * [Bugs](#bugs)
     * [Lighthouse Results](#lighthouse-results)
@@ -49,7 +48,7 @@ A live website can be found [here](https://joelew709500.github.io/CI-project-2/i
 * This section contains the game called barrel jump
 * This is where the user needs to avoid being hit with a barrel by jumping over it
 * There is a score section that consists of the run score of the active game and then next to that is the high score to give the user something to beat
-* When the user gets hit the game ends and a modal shows giving the score of the game andd  the previous high score
+* When the user gets hit the game ends and a modal shows giving the score of the game and  the previous high score
 * The instructions are within a modal to give the users a better experience
 
 ![Barrel Jump image](assets/readme-files/barrel-jump.png)
@@ -83,7 +82,7 @@ A live website can be found [here](https://joelew709500.github.io/CI-project-2/i
 ### Bugs
 * HTML
     * No errors showing on jigsaw validator
-    * There is a warning for the header element for the modal but this is for design as the javascript populates this element
+    * There is a warning for the header element for the modal but this is for design as the JavaScript populates this element
 
 ![W3 HTML Validator](assets/readme-files/HTML-validator.png)
 
@@ -93,11 +92,11 @@ A live website can be found [here](https://joelew709500.github.io/CI-project-2/i
 
 ![Jigsaw Validator](assets/readme-files/css-jigsaw.png)
 
-* Javascript
+* JavaScript
     * Image paths were wrong on the character switch function added '.' in front of the file paths to fix
     * JShint
-        * First time running JShint i had multiple warnings for missing semicolons I went back through and added these in
-        * There was also a warning for the async function which is part of es8 but JShint was running es6 to fix this error i added /* jshint esversion: 8 */  to the top of the file
+        * First time running JShint I had multiple warnings for missing semicolons I went back through and added these in
+        * There was also a warning for the async function which is part of es8 but JShint was running es6 to fix this error I added /* jshint esversion: 8 */  to the top of the file
         * There is also a warning for functions being called within loops on lines 151 and 186 however this is as intended
         
 
