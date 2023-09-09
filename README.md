@@ -19,6 +19,7 @@ A live website can be found [here](https://joelew709500.github.io/CI-project-2/i
     * [Barrel Jump](#barrel-jump)
     * [RPSLS](#rpsls)
     * [Feedback](#feedback)
+* [Wire Frames](#wire-frames)
 * [Testing](#testing)
     * [Bugs](#bugs)
     * [Lighthouse Results](#lighthouse-results)
@@ -72,6 +73,11 @@ A live website can be found [here](https://joelew709500.github.io/CI-project-2/i
 * The icons also enlarge when you hover over them for a more interactive user experience 
 
 ![footer image](assets/readme-files/footer.png)
+
+## Wire Frames
+[Back to table of content](#table-of-content)
+
+
 
 ## Testing
 [Back to table of content](#table-of-content)
